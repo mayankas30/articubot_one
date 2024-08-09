@@ -36,9 +36,56 @@ def generate_launch_description():
                                    '-entity', 'my_bot'],
                         output='screen')
 
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
+    )
+
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"],
+    )
+
+
+
+
+    # RVIZ node
+
+    # namePackage = 'articubot_one'
+    # rviz2RelativePath = 'config/ros2_control_bot.rviz' # CHANGE FILE NAME TO OPEN DIFFERENT CONFIG FILE
+
+    # rviz2_config_file = os.path.join(get_package_share_directory(namePackage),rviz2RelativePath)
+
+    # rviz2_node = Node(
+    #     package='rviz2',
+    #     executable='rviz2',
+    #     name='rviz2',
+    #     arguments=['-d', rviz2_config_file],
+    #     output='screen'
+    # ) 
+
+
+
+
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
+        diff_drive_spawner,
+        joint_broad_spawner,
+        # rviz2_node
     ])
+
+
+
+
+
+
+ 
+    
+
+
+
