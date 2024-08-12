@@ -76,7 +76,9 @@ def generate_launch_description():
     # RVIZ node
 
     namePackage = 'articubot_one'
-    rviz2RelativePath = 'config/main.rviz' # CHANGE FILE NAME TO OPEN DIFFERENT CONFIG FILE
+    # rviz2RelativePath = 'config/main.rviz' # CHANGE FILE NAME TO OPEN DIFFERENT CONFIG FILE
+    rviz2RelativePath = 'config/main_map.rviz'
+
 
     rviz2_config_file = os.path.join(get_package_share_directory(namePackage),rviz2RelativePath)
 
